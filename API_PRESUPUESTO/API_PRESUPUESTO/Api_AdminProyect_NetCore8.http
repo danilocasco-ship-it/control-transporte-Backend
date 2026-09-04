@@ -1,0 +1,8 @@
+@Api-AdminProyect-NetCore8_HostAddress = http://localhost:
+
+
+
+GET {{Api-AdminProyect-NetCore8_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
