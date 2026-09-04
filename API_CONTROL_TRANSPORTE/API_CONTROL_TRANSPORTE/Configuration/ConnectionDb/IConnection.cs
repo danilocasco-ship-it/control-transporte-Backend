@@ -1,4 +1,4 @@
-﻿namespace API_PRESUPUESTO.Configuration.ConnectionDb
+namespace API_CONTROL_TRANSPORTE.Configuration.ConnectionDb
 {
     public interface IConnection
     {

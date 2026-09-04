@@ -3,7 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 
-namespace API_PRESUPUESTO.Configuration.Jwt
+namespace API_CONTROL_TRANSPORTE.Configuration.Jwt
 {
     public class DecodeToken : IDecodeToken
     {

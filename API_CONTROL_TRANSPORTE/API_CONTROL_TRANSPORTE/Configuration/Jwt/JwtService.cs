@@ -1,11 +1,11 @@
-﻿using Application.SQL.Auth.DTO;
+using Application.SQL.Auth.DTO;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Text;
 
-namespace API_PRESUPUESTO.Configuration.JwtSercive
+namespace API_CONTROL_TRANSPORTE.Configuration.JwtSercive
 {
     public class JwtService : IJwtService
     {

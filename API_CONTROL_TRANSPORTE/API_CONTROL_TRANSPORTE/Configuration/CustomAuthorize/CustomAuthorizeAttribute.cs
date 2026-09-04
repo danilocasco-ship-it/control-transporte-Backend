@@ -1,10 +1,10 @@
-using API_PRESUPUESTO.Configuration.Authorization;
+using API_CONTROL_TRANSPORTE.Configuration.Authorization;
 using Application.SQL.Auth.DTO;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
-using API_PRESUPUESTO.Configuration.Jwt;
+using API_CONTROL_TRANSPORTE.Configuration.Jwt;
 
-namespace API_PRESUPUESTO.Configuration.CustomAuthorize
+namespace API_CONTROL_TRANSPORTE.Configuration.CustomAuthorize
 {
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class)]
     public class CustomAuthorizeAttributes : TypeFilterAttribute

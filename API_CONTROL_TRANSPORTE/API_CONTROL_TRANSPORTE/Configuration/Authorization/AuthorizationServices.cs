@@ -3,7 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 
-namespace API_PRESUPUESTO.Configuration.Authorization
+namespace API_CONTROL_TRANSPORTE.Configuration.Authorization
 {
     public class AuthorizationServices : IAuthorizationServices
     {

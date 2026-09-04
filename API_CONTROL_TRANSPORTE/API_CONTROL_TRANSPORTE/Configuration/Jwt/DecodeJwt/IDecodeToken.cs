@@ -1,6 +1,6 @@
 using Application.SQL.Auth.DTO;
 
-namespace API_PRESUPUESTO.Configuration.Jwt
+namespace API_CONTROL_TRANSPORTE.Configuration.Jwt
 {
     public interface IDecodeToken
     {

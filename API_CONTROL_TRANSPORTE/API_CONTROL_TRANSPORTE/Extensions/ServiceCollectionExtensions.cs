@@ -1,4 +1,4 @@
-﻿using Application.Configuration;
+using Application.Configuration;
 using Application.SQL.Auth.Interface;
 using Application.SQL.Auth.Service;
 using Application.Utilidades.EnvioCorreo.Interface;
@@ -9,12 +9,12 @@ using Application.Configuration.SerializeToXml;
 using Infrastructure.DataConnection.ConnectionOracle;
 using Infrastructure.DataConnection.ConnectionSQL;
 using Infrastructure.DataConnection.ConnectionWCF;
-using API_PRESUPUESTO.Configuration.Authorization;
-using API_PRESUPUESTO.Configuration.ConnectionDb;
-using API_PRESUPUESTO.Configuration.Jwt;
-using API_PRESUPUESTO.Configuration.JwtSercive;
+using API_CONTROL_TRANSPORTE.Configuration.Authorization;
+using API_CONTROL_TRANSPORTE.Configuration.ConnectionDb;
+using API_CONTROL_TRANSPORTE.Configuration.Jwt;
+using API_CONTROL_TRANSPORTE.Configuration.JwtSercive;
 
-namespace API_PRESUPUESTO.Extensions
+namespace API_CONTROL_TRANSPORTE.Extensions
 {
     public static class ServiceCollectionExtensions
     {

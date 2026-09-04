@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration;
 using System.Configuration;
 
-namespace API_PRESUPUESTO.Configuration.ConnectionDb
+namespace API_CONTROL_TRANSPORTE.Configuration.ConnectionDb
 {
     public class Connection : IConnection
     {

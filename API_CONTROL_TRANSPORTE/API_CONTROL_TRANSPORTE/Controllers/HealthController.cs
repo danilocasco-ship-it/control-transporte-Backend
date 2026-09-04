@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace API_PRESUPUESTO.Controllers
+namespace API_CONTROL_TRANSPORTE.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

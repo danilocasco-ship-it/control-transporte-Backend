@@ -1,6 +1,6 @@
-﻿using Application.SQL.Auth.DTO;
+using Application.SQL.Auth.DTO;
 
-namespace API_PRESUPUESTO.Configuration.JwtSercive
+namespace API_CONTROL_TRANSPORTE.Configuration.JwtSercive
 {
     public interface IJwtService
     {

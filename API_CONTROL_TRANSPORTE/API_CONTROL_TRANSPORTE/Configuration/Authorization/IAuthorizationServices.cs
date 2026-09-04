@@ -1,6 +1,6 @@
 using Application.SQL.Auth.DTO;
 
-namespace API_PRESUPUESTO.Configuration.Authorization
+namespace API_CONTROL_TRANSPORTE.Configuration.Authorization
 {
     public interface IAuthorizationServices
     {

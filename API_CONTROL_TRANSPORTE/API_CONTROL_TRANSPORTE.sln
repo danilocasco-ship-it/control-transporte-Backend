@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{A1A49829-ABC5-4256-A6E2-4D7551AF8AA0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API_PRESUPUESTO", "API_PRESUPUESTO\API_PRESUPUESTO.csproj", "{48BDF7A3-A487-402D-A20C-61B4C6CED6DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API_CONTROL_TRANSPORTE", "API_CONTROL_TRANSPORTE\API_CONTROL_TRANSPORTE.csproj", "{48BDF7A3-A487-402D-A20C-61B4C6CED6DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
