@@ -1,6 +1,5 @@
-﻿using API_PRESUPUESTO.Configuration.Authorization;
-using Application.SQL.Login.DTO;
-using Microsoft.AspNetCore.Authorization;
+using API_PRESUPUESTO.Configuration.Authorization;
+using Application.SQL.Auth.DTO;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
 using API_PRESUPUESTO.Configuration.Jwt;
@@ -8,7 +7,6 @@ using API_PRESUPUESTO.Configuration.Jwt;
 namespace API_PRESUPUESTO.Configuration.CustomAuthorize
 {
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class)]
-    
     public class CustomAuthorizeAttributes : TypeFilterAttribute
     {
         public CustomAuthorizeAttributes(string permission) : base(typeof(AuthorizationFilter))
@@ -43,10 +41,9 @@ namespace API_PRESUPUESTO.Configuration.CustomAuthorize
                         return;
                     }
 
-                    LoginDTO loginDTO = _decodeToken.DecodeTokens(token);
+                    SesionUsuarioDTO sesion = _decodeToken.DecodeTokens(token);
 
-
-                    if (loginDTO == null || loginDTO.usuario == null)
+                    if (sesion == null || string.IsNullOrWhiteSpace(sesion.codusuario))
                     {
                         context.Result = new ObjectResult(new { respuesta = "Token no válido" })
                         {
@@ -55,9 +52,7 @@ namespace API_PRESUPUESTO.Configuration.CustomAuthorize
                         return;
                     }
 
-
-                    var permisoResult = _authorizationService.TienePermiso(loginDTO.permisos, _permission);
-                    if (!permisoResult)
+                    if (!_authorizationService.TienePermiso(sesion.permisos, _permission))
                     {
                         context.Result = new ObjectResult(new { respuesta = "No tiene permiso para ejecutar esta acción" })
                         {
@@ -66,8 +61,7 @@ namespace API_PRESUPUESTO.Configuration.CustomAuthorize
                         return;
                     }
 
-                    var tokenResult = _authorizationService.TokenExpirado(token);
-                    if (tokenResult)
+                    if (_authorizationService.TokenExpirado(token))
                     {
                         context.Result = new ObjectResult(new { respuesta = "Su token Expiró" })
                         {
@@ -83,6 +77,8 @@ namespace API_PRESUPUESTO.Configuration.CustomAuthorize
                         StatusCode = 500
                     };
                 }
+
+                await Task.CompletedTask;
             }
         }
     }

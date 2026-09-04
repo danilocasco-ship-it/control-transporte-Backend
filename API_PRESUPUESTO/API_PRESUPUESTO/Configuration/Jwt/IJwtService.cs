@@ -1,10 +1,9 @@
-﻿using Application.SQL.Login_pre.DTO;
+﻿using Application.SQL.Auth.DTO;
 
 namespace API_PRESUPUESTO.Configuration.JwtSercive
 {
     public interface IJwtService
     {
-        string GenerarToken(Login_DTO login);
-
+        string GenerarToken(DatosUsuarioSesion usuario);
     }
 }

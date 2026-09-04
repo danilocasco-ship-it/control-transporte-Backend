@@ -1,4 +1,4 @@
-﻿using Application.SQL.Login.DTO;
+using Application.SQL.Auth.DTO;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
@@ -7,11 +7,8 @@ namespace API_PRESUPUESTO.Configuration.Jwt
 {
     public class DecodeToken : IDecodeToken
     {
-        public LoginDTO DecodeTokens(string token)
+        public SesionUsuarioDTO DecodeTokens(string token)
         {
-            LoginDTO login = new LoginDTO();
-
-            //Extraer key de appsettings.json jwt
             IConfiguration configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
@@ -31,37 +28,27 @@ namespace API_PRESUPUESTO.Configuration.Jwt
                 };
 
                 SecurityToken securityToken;
-                var principal = tokenHandler.ValidateToken(token, validationParameters, out securityToken);
+                tokenHandler.ValidateToken(token, validationParameters, out securityToken);
 
                 var jwtToken = securityToken as JwtSecurityToken;
 
-                if (jwtToken != null && jwtToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
-                {
-                    var payload = jwtToken.Payload;
-
-                    var id = int.Parse(payload["Id"].ToString());
-                    var usuario = payload["Usuario"].ToString();
-                    var permisos = payload["Permisos"].ToString();
-                    var mac_adress = payload["Mac_Adress"].ToString();
-                    var expiracion = payload.ValidTo;
-
-                    login.id = id;
-                    login.usuario = usuario;
-                    login.mac_maquina = mac_adress;
-                    login.permisos = Newtonsoft.Json.JsonConvert.DeserializeObject<System.Collections.Generic.List<PermisosDTO>>(permisos);
-                    login.expiracion = expiracion;
-                }
-                else
-                {
-                    // Token no válido
+                if (jwtToken == null || !jwtToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
                     return null;
-                }
 
-                return login;
+                var payload = jwtToken.Payload;
+                int.TryParse(payload.ContainsKey("tipousuario") ? payload["tipousuario"]?.ToString() : "0", out var tipousuario);
+
+                return new SesionUsuarioDTO
+                {
+                    tipousuario = tipousuario,
+                    codusuario = payload.ContainsKey("codusuario") ? payload["codusuario"]?.ToString() : string.Empty,
+                    nomusuario = payload.ContainsKey("nomusuario") ? payload["nomusuario"]?.ToString() : string.Empty,
+                    expiracion = payload.ValidTo,
+                    permisos = new List<PermisoDTO>()
+                };
             }
             catch (Exception ex)
             {
-                // Manejo de excepciones
                 Console.WriteLine($"Error al decodificar token: {ex.Message}");
                 return null;
             }

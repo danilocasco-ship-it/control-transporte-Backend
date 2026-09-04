@@ -1,4 +1,4 @@
-Ôªø<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -192,87 +192,11 @@
     <Compile Include="Configuration\SerializeToXml\SerializeToXml.cs" />
     <Compile Include="Configuration\Mapper\DataMapper.cs" />
     <Compile Include="Configuration\Mapper\IDataMapper.cs" />
-    <Compile Include="Presupuestos\Asignacion\AsignaContratista\DTO\AsignaContratistaDTO.cs" />
-    <Compile Include="Presupuestos\Asignacion\AsignaContratista\Interface\IAsignaContratista.cs" />
-    <Compile Include="Presupuestos\Asignacion\AsignaContratista\Parametros\AsignaContratistaParametros.cs" />
-    <Compile Include="Presupuestos\Asignacion\AsignaContratista\Service\AsignaContratistaService.cs" />
-    <Compile Include="Presupuestos\Asignacion\ListaProcesos\DTO\ListaProcesosDTO.cs" />
-    <Compile Include="Presupuestos\Asignacion\ListaProcesos\Interface\IListaProcesos.cs" />
-    <Compile Include="Presupuestos\Asignacion\ListaProcesos\Services\ListaProcesosService.cs" />
-    <Compile Include="SQL\Asignaciones\DTO\ListaAsignacionesDTO.cs" />
-    <Compile Include="SQL\Asignaciones\Interface\IListaAsignaciones.cs" />
-    <Compile Include="SQL\Asignaciones\Parameter\ListaAsignacionesParameter.cs" />
-    <Compile Include="SQL\Asignaciones\Service\ListaAsignacionesService.cs" />
-    <Compile Include="SQL\lista_presupuestos\DTO\ListaPresupuestoDTO.cs" />
-    <Compile Include="SQL\lista_presupuestos\Interface\IListaPresupuesto.cs" />
-    <Compile Include="SQL\lista_presupuestos\Parameter\ListaPresupuestoParam.cs" />
-    <Compile Include="SQL\lista_presupuestos\Service\ListaPresupuestoService.cs" />
-    <Compile Include="SQL\Login_pre\DTO\Login_DTO.cs" />
-    <Compile Include="SQL\Login_pre\DTO\Parameter_PasswordDTO.cs" />
-    <Compile Include="SQL\Login_pre\DTO\Permisos_DTO.cs" />
-    <Compile Include="SQL\Login_pre\DTO\Response_PasswordDTO.cs" />
-    <Compile Include="SQL\Login_pre\Interface\ILogin_Services.cs" />
-    <Compile Include="Presupuestos\Reporte\PresupuestoVsConsumoObra\DTO\PresupuestoVsConsumoObraDTO.cs" />
-    <Compile Include="Presupuestos\Reporte\PresupuestoVsConsumoObra\Interfaces\IPresupuestoVsConsumoObraService.cs" />
-    <Compile Include="Presupuestos\Reporte\PresupuestoVsConsumoObra\Parametros\PresupuestoVsConsumoObraParameter.cs" />
-    <Compile Include="Presupuestos\Reporte\PresupuestoVsConsumoObra\Services\PresupuestoVsConsumoObraServices.cs" />
-    <Compile Include="Presupuestos\Reporte\PresupuestoVsConsumo\DTO\PresupuestoVsConsumoDTO.cs" />
-    <Compile Include="Presupuestos\Reporte\PresupuestoVsConsumo\Interfaces\IPresupuestoVsConsumoServices.cs" />
-    <Compile Include="Presupuestos\Reporte\PresupuestoVsConsumo\Parametros\PresupuestoVsConsumoParameter.cs" />
-    <Compile Include="Presupuestos\Reporte\PresupuestoVsConsumo\Services\PresupuestoVsConsumoServices.cs" />
-    <Compile Include="SQL\gen_proyecto\DTO\gen_proyectoDTO.cs" />
-    <Compile Include="SQL\gen_proyecto\Interface\IGenProyecto.cs" />
-    <Compile Include="SQL\gen_proyecto\Service\GenProyectoService.cs" />
-    <Compile Include="SQL\gen_sucursal\DTO\gen_sucursalDTO.cs" />
-    <Compile Include="SQL\gen_sucursal\Interface\IGenSucursal.cs" />
-    <Compile Include="SQL\gen_sucursal\Service\GenSucursalService.cs" />
-    <Compile Include="SQL\gen_viviendaslotes\DTO\gen_viviendaslotesDTO.cs" />
-    <Compile Include="SQL\gen_viviendaslotes\Interface\IGenViviendasLotes.cs" />
-    <Compile Include="SQL\gen_viviendaslotes\Service\GenViviendasLotesService.cs" />
-    <Compile Include="SQL\Login\DTO\LoginDTO.cs" />
-    <Compile Include="SQL\Login\DTO\ParameterPasswordChangeDTO.cs" />
-    <Compile Include="SQL\Login\DTO\PermisosDTO.cs" />
-    <Compile Include="SQL\Login\DTO\ResponsePasswordChangeDTO.cs" />
-    <Compile Include="SQL\Login\Interface\ILoginService.cs" />
-    <Compile Include="SQL\Login\Parameter\ParameterLogin.cs" />
-    <Compile Include="SQL\Login\Service\LoginService.cs" />
+    <Compile Include="SQL\Auth\DTO\SesionUsuarioDTO.cs" />
+    <Compile Include="SQL\Auth\DTO\DatosUsuarioSesion.cs" />
+    <Compile Include="SQL\Auth\Interface\IServicioUsuarioHandoff.cs" />
+    <Compile Include="SQL\Auth\Service\ServicioUsuarioHandoff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQL\Login_pre\Parameter\Parameter_Login.cs" />
-    <Compile Include="SQL\Login_pre\service\Login_Service.cs" />
-    <Compile Include="SQL\MapaVivienda\DTO\PresupuestoProgramacionDTO.cs" />
-    <Compile Include="SQL\MapaVivienda\Interface\IPresupuestoProgramacion.cs" />
-    <Compile Include="SQL\MapaVivienda\Parameter\ParameterMapaVivienda.cs" />
-    <Compile Include="SQL\MapaVivienda\Service\PresupuestoProgramacionService.cs" />
-    <Compile Include="SQL\pre_fase\DTO\pre_faseDTO.cs" />
-    <Compile Include="SQL\pre_fase\Interface\IPreFase.cs" />
-    <Compile Include="SQL\pre_fase\Service\PreFaseService.cs" />
-    <Compile Include="SQL\pre_obras_importacion\DTO\ObraImportExcelDTO.cs" />
-    <Compile Include="SQL\pre_obras_importacion\Interface\IPreObrasImportacion.cs" />
-    <Compile Include="SQL\pre_obras_importacion\Service\PreObrasImportacionService.cs" />
-    <Compile Include="SQL\pre_presupuesto\DTO\pre_presupuestoDTO.cs" />
-    <Compile Include="SQL\pre_presupuesto\Interface\IPrePresupuesto.cs" />
-    <Compile Include="SQL\pre_presupuesto\Service\PrePresupuestoService.cs" />
-    <Compile Include="SQL\pre_presupuesto_importacion\DTO\PrePresupuestoCargaDTO.cs" />
-    <Compile Include="SQL\pre_presupuesto_importacion\DTO\PrePresupuestoEncabezadoDTO.cs" />
-    <Compile Include="SQL\pre_presupuesto_importacion\DTO\PrePresupuestoItemDetalleDTO.cs" />
-    <Compile Include="SQL\pre_presupuesto_importacion\Interface\IPrePresupuestoImportacion.cs" />
-    <Compile Include="SQL\pre_presupuesto_importacion\Service\IPrePresupuestoImportacion.cs" />
-    <Compile Include="SQL\pre_proceso\DTO\pre_procesoDTO.cs" />
-    <Compile Include="SQL\pre_proceso\Interface\IPreProceso.cs" />
-    <Compile Include="SQL\pre_proceso\Service\PreProcesoService.cs" />
-    <Compile Include="SQL\Token\DTO\Result.cs" />
-    <Compile Include="SQL\Token\DTO\TokenDTO.cs" />
-    <Compile Include="SQL\Token\Interface\ITokenService.cs" />
-    <Compile Include="SQL\Token\Service\TokenService.cs" />
-    <Compile Include="SQL\Usuario\DTO\GuardarEditarUsuarioDTO.cs" />
-    <Compile Include="SQL\Usuario\DTO\ResultUsuarioDTO.cs" />
-    <Compile Include="SQL\Usuario\DTO\UsuarioDTO.cs" />
-    <Compile Include="SQL\Usuario\Interface\IUsuarioService.cs" />
-    <Compile Include="SQL\Usuario\Parameter\ParameterUsuario.cs" />
-    <Compile Include="SQL\Usuario\Service\UsuarioService.cs" />
-    <Compile Include="SQL\v_empleado\DTO\v_empleadoDTO.cs" />
-    <Compile Include="SQL\v_empleado\Interface\IVEmpleado.cs" />
-    <Compile Include="SQL\v_empleado\Service\VEmpleadoService.cs" />
     <Compile Include="Utilidades\EnvioCorreo\Interface\ISendEmailsService.cs" />
     <Compile Include="Utilidades\EnvioCorreo\Parameter\Adjuntos.cs" />
     <Compile Include="Utilidades\EnvioCorreo\Parameter\ConfigCredentialsEmail.cs" />
@@ -280,16 +204,6 @@
     <Compile Include="Utilidades\EnvioCorreo\Services\SendEmailsService.cs" />
     <Compile Include="Utilidades\ExportToExcel\Interface\IExportToExcel.cs" />
     <Compile Include="Utilidades\ExportToExcel\Services\ExportToExcel.cs" />
-    <Compile Include="WCF\InicioSesionUIF\DTO\AddToken.cs" />
-    <Compile Include="WCF\InicioSesionUIF\DTO\InicioSesion.cs" />
-    <Compile Include="WCF\InicioSesionUIF\DTO\request.cs" />
-    <Compile Include="WCF\InicioSesionUIF\DTO\Result.cs" />
-    <Compile Include="WCF\InicioSesionUIF\Interface\IIniciarSesionService.cs" />
-    <Compile Include="WCF\InicioSesionUIF\Parameter\ParameterInicioSesion.cs" />
-    <Compile Include="WCF\InicioSesionUIF\Service\IniciarSesionService.cs" />
-    <Compile Include="WCF\ReporteEfectivoDiario\DTO\Result.cs" />
-    <Compile Include="WCF\ReporteEfectivoDiario\Interface\IReporteEfectivoDiario.cs" />
-    <Compile Include="WCF\ReporteEfectivoDiario\Service\ReporteEfectivoDiario.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
@@ -302,16 +216,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Presupuestos\Asignacion\ListaProcesos\Parametros\" />
-    <Folder Include="Query\Oracle\" />
-    <Folder Include="Query\SQL\" />
     <Folder Include="Utilidades\EnvioCorreo\DTO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauraci√≥n de paquetes NuGet para descargarlos. Para obtener m√°s informaci√≥n, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauraciÛn de paquetes NuGet para descargarlos. Para obtener m·s informaciÛn, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets'))" />
   </Target>

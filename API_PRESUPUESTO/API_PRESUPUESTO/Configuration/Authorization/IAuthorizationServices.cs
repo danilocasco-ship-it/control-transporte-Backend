@@ -1,10 +1,10 @@
-﻿using Application.SQL.Login.DTO;
+using Application.SQL.Auth.DTO;
 
 namespace API_PRESUPUESTO.Configuration.Authorization
 {
     public interface IAuthorizationServices
     {
-        bool TienePermiso(List<PermisosDTO> permisos, string v);
+        bool TienePermiso(List<PermisoDTO> permisos, string v);
         bool TokenExpirado(string token);
     }
 }

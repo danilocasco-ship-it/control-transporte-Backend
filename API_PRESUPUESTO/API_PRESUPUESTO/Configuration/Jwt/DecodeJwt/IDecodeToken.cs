@@ -1,9 +1,9 @@
-﻿using Application.SQL.Login.DTO;
+using Application.SQL.Auth.DTO;
 
 namespace API_PRESUPUESTO.Configuration.Jwt
 {
     public interface IDecodeToken
     {
-        LoginDTO DecodeTokens(string token);
+        SesionUsuarioDTO DecodeTokens(string token);
     }
 }

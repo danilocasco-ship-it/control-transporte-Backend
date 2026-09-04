@@ -1,4 +1,4 @@
-﻿using Application.SQL.Login.DTO;
+using Application.SQL.Auth.DTO;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
@@ -14,9 +14,11 @@ namespace API_PRESUPUESTO.Configuration.Authorization
             _configuration = configuration;
         }
 
-        public bool TienePermiso(List<PermisosDTO> permisos, string v)
+        public bool TienePermiso(List<PermisoDTO> permisos, string v)
         {
-            // Verificar si el usuario tiene el permiso especificado
+            if (permisos == null || permisos.Count == 0)
+                return true; // plantilla: sin catálogo de permisos aún
+
             return permisos.Any(p => p.nombre_permiso == v);
         }
 
@@ -25,40 +27,27 @@ namespace API_PRESUPUESTO.Configuration.Authorization
             try
             {
                 var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]); // Obtener la clave del archivo appsettings.json
+                var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
 
-                // Validar el token JWT
                 var tokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = false,
                     ValidateAudience = false,
-                    ValidateLifetime = true // Habilitar la validación del tiempo de expiración del token
+                    ValidateLifetime = true
                 };
 
                 SecurityToken validatedToken;
-                var claimsPrincipal = tokenHandler.ValidateToken(token, tokenValidationParameters, out validatedToken);
-
-                if (validatedToken.ValidTo < DateTime.UtcNow)
-                {
-                    // El token ha expirado
-                    return true;
-                }
-                else
-                {
-                    // El token no ha expirado
-                    return false;
-                }
+                tokenHandler.ValidateToken(token, tokenValidationParameters, out validatedToken);
+                return validatedToken.ValidTo < DateTime.UtcNow;
             }
             catch (SecurityTokenExpiredException)
             {
-                // El token ha expirado
                 return true;
             }
             catch
             {
-                // Otros errores
                 return true;
             }
         }
