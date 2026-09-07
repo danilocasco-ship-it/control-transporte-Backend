@@ -4,7 +4,7 @@ using IntegracionLogin;
 var builder = WebApplication.CreateBuilder(args);
 
 // API local — ajustar puerto del módulo
-builder.WebHost.UseUrls("http://localhost:8096");
+builder.WebHost.UseUrls("http://localhost:8097");
 
 builder.Services.AddControllers();
 builder.Services.AddLogging();
