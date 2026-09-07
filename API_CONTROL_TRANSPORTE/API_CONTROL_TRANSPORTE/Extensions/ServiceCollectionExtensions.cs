@@ -1,5 +1,6 @@
 using Application.Configuration;
 using Application.SQL.Auth.Interface;
+using Application.SQL.Auth.Parameter;
 using Application.SQL.Auth.Service;
 using Application.Utilidades.EnvioCorreo.Interface;
 using Application.Utilidades.EnvioCorreo.Services;
@@ -29,6 +30,7 @@ namespace API_CONTROL_TRANSPORTE.Extensions
             services.AddScoped<IConnectionWCF, ConnectionWCF>();
 
             services.AddScoped<IServicioUsuarioHandoff, ServicioUsuarioHandoff>();
+            services.AddScoped<IServicioLoginLocal, ServicioLoginLocal>();
             services.AddScoped<IJwtService, JwtService>();
             services.AddScoped<IDecodeToken, DecodeToken>();
             services.AddScoped<IAuthorizationServices, AuthorizationServices>();

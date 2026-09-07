@@ -195,7 +195,10 @@
     <Compile Include="SQL\Auth\DTO\SesionUsuarioDTO.cs" />
     <Compile Include="SQL\Auth\DTO\DatosUsuarioSesion.cs" />
     <Compile Include="SQL\Auth\Interface\IServicioUsuarioHandoff.cs" />
+    <Compile Include="SQL\Auth\Interface\IServicioLoginLocal.cs" />
+    <Compile Include="SQL\Auth\Parameter\Parameter_Login.cs" />
     <Compile Include="SQL\Auth\Service\ServicioUsuarioHandoff.cs" />
+    <Compile Include="SQL\Auth\Service\ServicioLoginLocal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades\EnvioCorreo\Interface\ISendEmailsService.cs" />
     <Compile Include="Utilidades\EnvioCorreo\Parameter\Adjuntos.cs" />
