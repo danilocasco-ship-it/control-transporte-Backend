@@ -1,0 +1,1 @@
+SELECT ISNULL(MAX(codproveedor), 0) + 1 FROM dbo.gen_proveedor WHERE codempresa = @codempresa

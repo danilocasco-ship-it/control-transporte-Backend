@@ -192,6 +192,14 @@
     <Compile Include="Configuration\SerializeToXml\SerializeToXml.cs" />
     <Compile Include="Configuration\Mapper\DataMapper.cs" />
     <Compile Include="Configuration\Mapper\IDataMapper.cs" />
+    <Compile Include="Proveedores\IProveedorService.cs" />
+    <Compile Include="Proveedores\ProveedorService.cs" />
+    <Compile Include="Equipos\IEquipoService.cs" />
+    <Compile Include="Equipos\EquipoService.cs" />
+    <Compile Include="Catalogos\ICatalogoEquipoService.cs" />
+    <Compile Include="Catalogos\CatalogoEquipoService.cs" />
+    <Compile Include="PrestamosEquipos\IPrestamoEquipoService.cs" />
+    <Compile Include="PrestamosEquipos\PrestamoEquipoService.cs" />
     <Compile Include="SQL\Auth\DTO\SesionUsuarioDTO.cs" />
     <Compile Include="SQL\Auth\DTO\DatosUsuarioSesion.cs" />
     <Compile Include="SQL\Auth\Interface\IServicioUsuarioHandoff.cs" />
@@ -225,7 +233,7 @@
   <Import Project="..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauraciï¿½n de paquetes NuGet para descargarlos. Para obtener mï¿½s informaciï¿½n, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets'))" />
   </Target>

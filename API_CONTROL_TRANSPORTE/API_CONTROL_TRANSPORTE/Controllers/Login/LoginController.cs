@@ -2,14 +2,13 @@ using API_CONTROL_TRANSPORTE.Configuration.ConnectionDb;
 using API_CONTROL_TRANSPORTE.Configuration.JwtSercive;
 using Application.SQL.Auth.Interface;
 using Application.SQL.Auth.Parameter;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_CONTROL_TRANSPORTE.Controllers.Login
 {
-    /// <summary>
-    /// Login local del módulo (desarrollo / activo=false en portal-auth).
-    /// Emite el mismo JWT nativo que el handoff SSO.
-    /// </summary>
+
+    [AllowAnonymous]
     [ApiController]
     [Route("api/[controller]")]
     public class LoginController : ControllerBase
